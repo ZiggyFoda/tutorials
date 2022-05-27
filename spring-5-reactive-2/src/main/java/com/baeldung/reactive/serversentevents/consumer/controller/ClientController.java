@@ -21,7 +21,7 @@ import reactor.core.publisher.Mono;
 public class ClientController {
 
     private static Logger logger = LoggerFactory.getLogger(ClientController.class);
-    private WebClient client = WebClient.create("http://localhost:8081/sse-server");
+    private WebClient client = WebClient.create("r2dbc:mariadb://127.0.0.1:3306/taller");
 
     @GetMapping("/launch-sse-client")
     public String launchSSEFromSSEWebClient() {
